@@ -3,299 +3,331 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Arthur Dauphole-Fouillet, Engineering Student at ISAE-SUPAERO & Thales. Specialized in Radar, Embedded Systems, and Aerospace Engineering.">
+    <meta name="description" content="Portfolio of Arthur Dauphole-Fouillet - Radar Validation and Test Engineer at Thales, Student at ISAE-SUPAERO & Paris Dauphine.">
     <meta name="author" content="Arthur Dauphole-Fouillet">
     
+    <meta property="og:title" content="Arthur Dauphole-Fouillet - Engineering Portfolio">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Arthur Dauphole-Fouillet - Radar & Space Engineer">
-    <meta property="og:description" content="Discover my projects in aerospace, embedded systems, and my journey at ISAE-SUPAERO and Thales.">
     <meta property="og:image" content="profile.jpg">
+    <meta property="og:description" content="Radar Validation Engineer & ISAE-SUPAERO Student. Discover my projects in Aerospace and Embedded Systems.">
 
-    <title>Arthur Dauphole-Fouillet - Portfolio</title>
+    <title>Arthur Dauphole-Fouillet | Portfolio</title>
+    
     <style>
-        /* --- CSS STYLES (Identical to previous version for consistency) --- */
+        /* --- RESET & VARIABLES --- */
+        :root {
+            --primary: #004481; /* Thales Blue vibe */
+            --secondary: #00a8e1;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f9fafb;
+            --white: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.6; color: #333; background-color: #fafafa; }
         
-        /* Navigation */
-        nav { position: fixed; top: 0; width: 100%; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); padding: 1.5rem 2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05); z-index: 1000; }
-        nav ul { list-style: none; display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; }
-        nav a { text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s; }
-        nav a:hover { color: #0066cc; }
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            scroll-behavior: smooth;
+        }
 
-        /* Hero Section */
-        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 2rem; margin-top: 60px; }
-        .hero h1 { font-size: 4rem; font-weight: 700; margin-bottom: 1rem; color: #111; }
-        .hero p { font-size: 1.5rem; color: #666; max-width: 800px; margin: 0 auto; }
+        /* --- LAYOUT UTILITIES --- */
+        .container { max-width: 1024px; margin: 0 auto; padding: 0 1.5rem; }
+        section { padding: 5rem 0; border-bottom: 1px solid #e5e7eb; }
+        h1, h2, h3 { line-height: 1.2; color: #111; }
+        h2 { font-size: 2rem; margin-bottom: 2.5rem; text-align: center; position: relative; }
+        h2::after { content: ''; display: block; width: 60px; height: 4px; background: var(--primary); margin: 0.5rem auto 0; border-radius: 2px; }
+        
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed; top: 0; width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        .nav-container {
+            display: flex; justify-content: space-between; align-items: center;
+            height: 70px; max-width: 1024px; margin: 0 auto; padding: 0 1.5rem;
+        }
+        .logo { font-weight: 700; font-size: 1.2rem; color: var(--primary); text-decoration: none; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 500; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--secondary); }
 
-        /* Sections */
-        section { max-width: 1000px; margin: 0 auto; padding: 6rem 2rem; }
-        h2 { font-size: 2.5rem; margin-bottom: 3rem; color: #111; }
+        /* --- HERO SECTION --- */
+        .hero {
+            padding-top: 140px; padding-bottom: 80px;
+            text-align: center; background: var(--white);
+        }
+        .hero-img {
+            width: 160px; height: 160px; object-fit: cover;
+            border-radius: 50%; border: 4px solid var(--white);
+            box-shadow: var(--shadow); margin-bottom: 1.5rem;
+        }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .hero .subtitle { font-size: 1.25rem; color: var(--text-light); margin-bottom: 1rem; max-width: 800px; margin-left: auto; margin-right: auto;}
+        .hero .location { font-size: 0.9rem; color: var(--text-light); display: flex; align-items: center; justify-content: center; gap: 0.5rem; }
+        .hero-summary { margin-top: 2rem; max-width: 700px; margin-left: auto; margin-right: auto; color: var(--text-light); text-align: justify;}
 
-        /* About */
-        .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-        .profile-container { display: flex; justify-content: center; align-items: center; }
-        .profile-img { width: 100%; max-width: 350px; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 102, 204, 0.2); transition: transform 0.3s ease; }
-        .profile-img:hover { transform: scale(1.02); }
-        .about-text p { margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.8; color: #555; text-align: justify; }
+        /* --- EXPERIENCE (TIMELINE) --- */
+        .timeline { position: relative; max-width: 800px; margin: 0 auto; }
+        .timeline::before {
+            content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+            width: 2px; background: #e5e7eb;
+        }
+        .job-card { position: relative; padding-left: 2rem; margin-bottom: 3rem; }
+        .job-card::before {
+            content: ''; position: absolute; left: -6px; top: 5px;
+            width: 14px; height: 14px; border-radius: 50%;
+            background: var(--primary); border: 2px solid var(--white);
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+        .job-header h3 { font-size: 1.3rem; margin-bottom: 0.2rem; }
+        .job-company { font-weight: 600; color: var(--primary); }
+        .job-date { font-size: 0.9rem; color: var(--text-light); margin-bottom: 1rem; display: block; }
+        .job-desc ul { padding-left: 1.2rem; margin-top: 0.5rem; }
+        .job-desc li { margin-bottom: 0.5rem; color: #4b5563; }
 
-        /* Experience (Timeline) */
-        .timeline { position: relative; padding-left: 2rem; }
-        .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: #e0e0e0; }
-        .timeline-item { position: relative; padding-bottom: 3rem; padding-left: 2rem; }
-        .timeline-item::before { content: ''; position: absolute; left: -2rem; top: 0; width: 12px; height: 12px; border-radius: 50%; background: #0066cc; border: 3px solid white; box-shadow: 0 0 0 3px #e0e0e0; }
-        .timeline-item h3 { font-size: 1.5rem; color: #111; margin-bottom: 0.5rem; }
-        .timeline-item .company { font-weight: 600; color: #0066cc; margin-bottom: 0.3rem; }
-        .timeline-item .period { color: #999; font-size: 0.9rem; margin-bottom: 1rem; }
-        .timeline-item p { color: #666; line-height: 1.7; margin-bottom: 0.8rem; }
-        .timeline-item ul { margin-left: 1.5rem; color: #666; }
-        .timeline-item li { margin-bottom: 0.5rem; }
+        /* --- EDUCATION --- */
+        .edu-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .edu-card {
+            background: var(--white); padding: 1.5rem;
+            border-radius: 8px; box-shadow: var(--shadow);
+            border-left: 4px solid var(--secondary);
+        }
+        .edu-school { font-weight: 700; font-size: 1.1rem; margin-bottom: 0.25rem; }
+        .edu-degree { color: var(--text-dark); margin-bottom: 0.5rem; }
+        .edu-year { font-size: 0.85rem; color: var(--text-light); font-style: italic; }
 
-        /* Projects */
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
-        .project-card { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s; }
-        .project-card:hover { transform: translateY(-5px); box-shadow: 0 6px 30px rgba(0,0,0,0.12); }
-        .project-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: #111; }
-        .project-card p { color: #666; margin-bottom: 1rem; line-height: 1.7; }
-        .project-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-        .tag { background: #e8f0fe; color: #0066cc; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.85rem; }
+        /* --- SKILLS & CERTS --- */
+        .skills-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+        .skill-group h3 { font-size: 1.2rem; margin-bottom: 1rem; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem; }
+        .tag-container { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+        .tag {
+            background: #e0f2fe; color: #0369a1;
+            padding: 0.3rem 0.8rem; border-radius: 20px;
+            font-size: 0.9rem; font-weight: 500;
+        }
+        .cert-list { list-style: none; }
+        .cert-list li { margin-bottom: 0.75rem; display: flex; align-items: flex-start; gap: 0.5rem; }
+        .cert-list li::before { content: '✓'; color: var(--secondary); font-weight: bold; }
 
-        /* Skills */
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-        .skill-category { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
-        .skill-category h3 { font-size: 1.3rem; margin-bottom: 1rem; color: #111; }
-        .skill-list { list-style: none; }
-        .skill-list li { padding: 0.5rem 0; color: #555; position: relative; padding-left: 1.5rem; }
-        .skill-list li::before { content: '▸'; position: absolute; left: 0; color: #0066cc; }
+        /* --- CONTACT & FOOTER --- */
+        .contact-section { text-align: center; background: var(--white); }
+        .btn {
+            display: inline-block; background: var(--primary); color: white;
+            padding: 0.8rem 2rem; border-radius: 50px; text-decoration: none;
+            font-weight: 600; transition: opacity 0.2s; margin: 0.5rem;
+        }
+        .btn:hover { opacity: 0.9; }
+        footer {
+            text-align: center; padding: 2rem; background: #111; color: #9ca3af; font-size: 0.9rem;
+        }
 
-        /* Education */
-        .education-grid { display: grid; gap: 2rem; }
-        .education-card { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
-        .education-card h3 { font-size: 1.5rem; color: #111; margin-bottom: 0.5rem; }
-        .education-card .degree { color: #0066cc; font-weight: 600; margin-bottom: 0.5rem; }
-        .education-card .period { color: #999; font-size: 0.9rem; }
-
-        /* Contact & Footer */
-        .contact-content { text-align: center; }
-        .contact-content p { font-size: 1.2rem; color: #666; margin-bottom: 2rem; }
-        .contact-links { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
-        .contact-btn { display: inline-block; padding: 1rem 2rem; background: #0066cc; color: white; text-decoration: none; border-radius: 6px; transition: background 0.3s, transform 0.2s; font-weight: 500; }
-        .contact-btn:hover { background: #0052a3; transform: translateY(-2px); }
-        footer { text-align: center; padding: 3rem 2rem; background: #111; color: white; }
-
-        /* Responsive */
+        /* --- MOBILE --- */
         @media (max-width: 768px) {
-            .hero { margin-top: 100px; }
-            .hero h1 { font-size: 2.5rem; }
-            .hero p { font-size: 1.2rem; }
-            .about-content { grid-template-columns: 1fr; gap: 2rem; }
-            .profile-img { max-width: 250px; }
-            nav ul { gap: 1rem; font-size: 0.9rem; }
-            section { padding: 4rem 1.5rem; }
-            h2 { font-size: 2rem; }
+            .nav-links { display: none; } /* Simplified for mobile */
+            .hero h1 { font-size: 2rem; }
+            .skills-wrapper { grid-template-columns: 1fr; gap: 2rem; }
+            .nav-container { justify-content: center; }
         }
     </style>
 </head>
 <body>
+
     <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="nav-container">
+            <a href="#" class="logo">A. Dauphole-Fouillet</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <section id="home" class="hero">
-        <div>
+    <section id="about" class="hero">
+        <div class="container">
+            <img src="profile.jpg" alt="Arthur Dauphole-Fouillet" class="hero-img">
+            
             <h1>Arthur Dauphole-Fouillet</h1>
-            <p>Radar Validation & Test Engineer • ISAE-SUPAERO • Thales</p>
-        </div>
-    </section>
+            <p class="subtitle">ISAE-SUPAERO | Paris Dauphine - PSL | Radar Validation and Test Engineer @Thales</p>
+            <p class="location">📍 Pessac, Nouvelle-Aquitaine, France</p>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <div class="about-content">
-            <div class="profile-container">
-                <img src="profile.jpg" alt="Arthur Dauphole-Fouillet" class="profile-img">
-            </div>
-            <div class="about-text">
-                [cite_start]<p>I am currently studying <strong>Industrial Engineering for Aeronautics and Space</strong> at ISAE-SUPAERO and completing a work-study program at Thales as a <strong>Radar Validation and Test Engineer</strong>[cite: 17].</p>
-                [cite_start]<p>My background has allowed me to develop strong skills in systems engineering, radar technologies, and embedded solutions design, always applying a rigorous and analytical approach[cite: 18].</p>
-                [cite_start]<p>I have also worked on innovative projects, such as the <strong>SaharaSAR</strong> project at the Bordeaux Astrophysics Laboratory, where I designed a drone release system, and the <strong>ROSELIA</strong> lunar mission proposal[cite: 19, 48].</p>
-                [cite_start]<p>Curious and motivated, I enjoy taking on technical challenges and contributing to advances in the aeronautics and defense sectors[cite: 20].</p>
+            <div class="hero-summary">
+                <p>I'm currently studying <strong>Industrial Engineering for Aeronautics and Space</strong> at ISAE-SUPAERO and doing my work-study at Thales as a Radar Validation and Test Engineer. My experience has enabled me to develop skills in systems engineering, radar technologies, and the design of embedded solutions, with a rigorous and analytical approach. Open to exchanges and collaborations!</p>
             </div>
         </div>
     </section>
 
     <section id="experience">
-        <h2>Experience</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="company">Thales</div>
-                <h3>Apprentice Radar Validation and Test Engineer</h3>
-                <div class="period">September 2024 - Present | Mérignac, France</div>
-                [cite_start]<p>Working within the Innovative Defence Engineering (IDE) Competence Centre, contributing to Radar development and validation[cite: 24, 26, 27].</p>
-                <ul>
-                    [cite_start]<li>Development and execution of tests for Radar operational functions[cite: 29].</li>
-                    [cite_start]<li>Implementation and automation of test sheets using <strong>Python</strong>[cite: 30].</li>
-                    [cite_start]<li>Development of a SAR Model simulation tool[cite: 31].</li>
-                    [cite_start]<li>Integration and validation of Radar Modes[cite: 32].</li>
-                    [cite_start]<li>Tools optimization using Jenkins, JIRA, and Git for continuous integration (CI/CD)[cite: 33].</li>
-                </ul>
-            </div>
+        <div class="container">
+            <h2>Experience</h2>
+            <div class="timeline">
+                
+                <div class="job-card">
+                    <div class="job-header">
+                        <h3>Apprentice Radar Validation and Test Engineer</h3>
+                        <div class="job-company">Thales</div>
+                        <span class="job-date">September 2024 - Present | Mérignac, France</span>
+                    </div>
+                    <div class="job-desc">
+                        <p>Working within the Innovative Defence Engineering (IDE) Competence Centre, I contribute to Radar development and validation.</p>
+                        <ul>
+                            <li>Development and test execution of Radar operational functions.</li>
+                            <li>Implementation and automation of test sheets in <strong>Python</strong>.</li>
+                            <li>Development of a SAR Model simulation tool.</li>
+                            <li>Integration and validation of Radar Modes.</li>
+                            <li>Tools optimization using <strong>Jenkins, JIRA, and Git</strong> for continuous integration.</li>
+                        </ul>
+                    </div>
+                </div>
 
-            <div class="timeline-item">
-                <div class="company">SupaeroMoon</div>
-                <h3>Mission Analyst</h3>
-                <div class="period">September 2024 - January 2025 | Toulouse, France</div>
-                [cite_start]<p>Co-authored the mission proposal for <strong>ROSELIA</strong>, a lunar rover mission submitted to the CSUT[cite: 48].</p>
-                <ul>
-                    [cite_start]<li>Defined scientific objectives: assessing the presence of water ice in the lunar regolith via active seismic measurements[cite: 49].</li>
-                    [cite_start]<li>Managed mission organization and environmental constraints analysis[cite: 48].</li>
-                </ul>
-            </div>
+                <div class="job-card">
+                    <div class="job-header">
+                        <h3>Mission Analyst</h3>
+                        <div class="job-company">SupaeroMoon</div>
+                        <span class="job-date">September 2024 - January 2025 | Toulouse, France</span>
+                    </div>
+                    <div class="job-desc">
+                        <p>Co-authored the mission proposal for <strong>ROSELIA</strong>, a lunar rover mission submitted to the CSUT (Centre Spatial Universitaire de Toulouse).</p>
+                        <ul>
+                            <li>Definition of scientific objectives: assessing the presence of water ice in the lunar regolith via active seismic measurements.</li>
+                            <li>Focus on mission organization and environmental constraints.</li>
+                        </ul>
+                    </div>
+                </div>
 
-            <div class="timeline-item">
-                <div class="company">Thales</div>
-                <h3>Electrical Design Engineer Intern</h3>
-                <div class="period">January 2024 - March 2024 | Mérignac, France</div>
-                [cite_start]<p>Designed and produced a miniature electric field probe for electromagnetic compatibility (EMC) in civil and military aviation[cite: 61].</p>
-                <ul>
-                    [cite_start]<li>Researched specific EMC challenges in aviation environments[cite: 64].</li>
-                    [cite_start]<li>Designed schematics and routing using <strong>KiCad</strong>[cite: 68].</li>
-                    [cite_start]<li>Conducted tests in semi-anechoic and mode-shuffling reverberation chambers[cite: 69, 70].</li>
-                    [cite_start]<li>modeled parts in 3D using <strong>Fusion 360</strong> and utilized 3D printing[cite: 72, 73].</li>
-                </ul>
-            </div>
+                <div class="job-card">
+                    <div class="job-header">
+                        <h3>Electrical Design Engineer Intern</h3>
+                        <div class="job-company">Thales</div>
+                        <span class="job-date">January 2024 - March 2024 | Mérignac, France</span>
+                    </div>
+                    <div class="job-desc">
+                        <p>Design and production of a miniature electric field probe for electromagnetic compatibility (EMC) in aviation.</p>
+                        <ul>
+                            <li>Study of EMC challenges in civil and military aviation.</li>
+                            <li>Design and construction using <strong>KiCad</strong> for schematic/routing.</li>
+                            <li>Testing in semi-anechoic and mode-shuffling reverberation chambers.</li>
+                            <li>CAD modelling (Fusion 360) and 3D printing of parts.</li>
+                        </ul>
+                    </div>
+                </div>
 
-            <div class="timeline-item">
-                <div class="company">Laboratoire d'astrophysique de Bordeaux</div>
-                <h3>Embedded Systems Engineer Intern</h3>
-                <div class="period">May 2023 - June 2023 | Pessac, France</div>
-                [cite_start]<p>Designed, prototyped, and tested a charge release mechanism for UAV-based geophysical measurements (SaharaSAR project)[cite: 81].</p>
-                <ul>
-                    [cite_start]<li>Developed a secure release mechanism for a DJI Phantom 4 Pro drone[cite: 83].</li>
-                    [cite_start]<li>Created CAD prototypes (Fusion 360) and manufactured components via 3D printing[cite: 86].</li>
-                    [cite_start]<li>Programmed on-board <strong>Arduino Nano</strong> to control the mechanism via optocouplers[cite: 91].</li>
-                </ul>
+                <div class="job-card">
+                    <div class="job-header">
+                        <h3>Embedded Systems Engineer Intern</h3>
+                        <div class="job-company">Laboratoire d'astrophysique de Bordeaux</div>
+                        <span class="job-date">May 2023 - June 2023 | Pessac, France</span>
+                    </div>
+                    <div class="job-desc">
+                        <p>SaharaSAR Project: Contributing to the mapping of fossil water resources in desert regions.</p>
+                        <ul>
+                            <li>Designed and prototyped a charge release mechanism for UAV-based (DJI Phantom 4) geophysical measurements.</li>
+                            <li>On-board programming on <strong>Arduino Nano</strong> to control the release mechanism via optocouplers.</li>
+                            <li>Real-life testing to assess system reliability.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="job-card">
+                    <div class="job-header">
+                        <h3>Private Teacher</h3>
+                        <div class="job-company">Independent</div>
+                        <span class="job-date">October 2022 - May 2024 | Bordeaux, France</span>
+                    </div>
+                    <div class="job-desc">
+                        <p>Taught mathematics and economics to university students using personalized methods.</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <section id="projects">
-        <h2>Key Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3>ROSELIA - Lunar Mission</h3>
-                <p>Co-design of a lunar rover mission aimed at detecting water ice in the regolith using active seismic measurements. [cite_start]Submitted to the Centre Spatial Universitaire de Toulouse[cite: 48, 49].</p>
-                <div class="project-tags">
-                    <span class="tag">Mission Analysis</span>
-                    <span class="tag">Space</span>
-                    <span class="tag">Geophysics</span>
+    <section id="education">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <div class="edu-school">ISAE-SUPAERO</div>
+                    <div class="edu-degree">Master's degree, Aeronautics and Space Engineering</div>
+                    <div class="edu-year">2024 - 2027</div>
                 </div>
-            </div>
-            <div class="project-card">
-                <h3>Miniature EMC Probe</h3>
-                <p>Complete design of an electric field probe for electromagnetic compatibility testing. [cite_start]From KiCad schematics to validation in anechoic chambers[cite: 61, 68].</p>
-                <div class="project-tags">
-                    <span class="tag">KiCad</span>
-                    <span class="tag">EMC</span>
-                    <span class="tag">Fusion 360</span>
+                <div class="edu-card">
+                    <div class="edu-school">Université Paris Dauphine - PSL</div>
+                    <div class="edu-degree">Bachelor's Degree in Applied Economics (Grande École)</div>
+                    <div class="edu-year">2025 - 2026</div>
                 </div>
-            </div>
-            <div class="project-card">
-                <h3>SaharaSAR - UAV Release System</h3>
-                [cite_start]<p>Development of an embedded release system for drones to aid in mapping fossil water resources in North African desert regions[cite: 91, 93].</p>
-                <div class="project-tags">
-                    <span class="tag">Arduino</span>
-                    <span class="tag">CAD / 3D Printing</span>
-                    <span class="tag">Embedded Systems</span>
+                <div class="edu-card">
+                    <div class="edu-school">University of Bordeaux</div>
+                    <div class="edu-degree">Bachelor of Science - BS, Aerospace Engineering</div>
+                    <div class="edu-year">2021 - 2024</div>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="skills">
-        <h2>Skills & Certifications</h2>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h3>Programming</h3>
-                <ul class="skill-list">
-                    [cite_start]<li>Python (Pandas, Automation) [cite: 10, 36]</li>
-                    [cite_start]<li>MATLAB [cite: 36]</li>
-                    [cite_start]<li>Arduino (C/C++) [cite: 91]</li>
-                    [cite_start]<li>Data Engineering [cite: 10]</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h3>Systems & DevOps</h3>
-                <ul class="skill-list">
-                    [cite_start]<li>Linux [cite: 37]</li>
-                    [cite_start]<li>Docker [cite: 37]</li>
-                    [cite_start]<li>Git / Bitbucket [cite: 38, 40]</li>
-                    [cite_start]<li>Jenkins (CI/CD) [cite: 39]</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h3>Engineering Tools</h3>
-                <ul class="skill-list">
-                    [cite_start]<li>JIRA (Agile/Scrum) [cite: 40, 43]</li>
-                    [cite_start]<li>DOORS (Requirements) [cite: 41]</li>
-                    [cite_start]<li>Fusion 360 (CAD) [cite: 72]</li>
-                    [cite_start]<li>KiCad (PCB Design) [cite: 68]</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h3>Languages</h3>
-                <ul class="skill-list">
-                    [cite_start]<li>French (Native) [cite: 8]</li>
-                    [cite_start]<li>English (Professional Working) [cite: 6]</li>
-                    [cite_start]<li>Spanish (Limited Working) [cite: 7]</li>
-                </ul>
-            </div>
-             <div class="skill-category">
-                <h3>Certifications</h3>
-                <ul class="skill-list">
-                    [cite_start]<li>Drone Pilot (Open A1/A3) [cite: 12]</li>
-                    [cite_start]<li>Space Ambassadors Diploma [cite: 11]</li>
-                    [cite_start]<li>Python & Pandas for Data Engineering [cite: 10]</li>
-                </ul>
+        <div class="container">
+            <h2>Skills & Certifications</h2>
+            <div class="skills-wrapper">
+                
+                <div class="skill-group">
+                    <h3>Technical Skills</h3>
+                    <div class="tag-container">
+                        <span class="tag">Python & Pandas</span>
+                        <span class="tag">MATLAB</span>
+                        <span class="tag">Linux / Docker</span>
+                        <span class="tag">Git / Jenkins</span>
+                        <span class="tag">JIRA / Bitbucket</span>
+                        <span class="tag">DOORS</span>
+                        <span class="tag">Agile / Scrum</span>
+                        <span class="tag">KiCad</span>
+                        <span class="tag">Fusion 360</span>
+                        <span class="tag">Arduino</span>
+                    </div>
+                    
+                    <h3 style="margin-top: 2rem;">Languages</h3>
+                    <ul class="cert-list">
+                        <li><strong>French:</strong> Native or Bilingual [cite: 8]</li>
+                        <li><strong>English:</strong> Professional Working [cite: 6]</li>
+                        <li><strong>Spanish:</strong> Limited Working [cite: 7]</li>
+                        <li><strong>Italian:</strong> Elementary [cite: 8]</li>
+                    </ul>
+                </div>
+
+                <div class="skill-group">
+                    <h3>Certifications</h3>
+                    <ul class="cert-list">
+                        <li>Python and Pandas for Data Engineering [cite: 10]</li>
+                        <li>Diplôme des ambassadeurs du spatial [cite: 11]</li>
+                        <li>Brevet de Télépilote catégorie ouverte A1 et A3 (Drone Pilot) [cite: 12]</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="education">
-        <h2>Education</h2>
-        <div class="education-grid">
-            <div class="education-card">
-                <h3>ISAE-SUPAERO</h3>
-                <div class="degree">Master's Degree - Aeronautics and Space Engineering</div>
-                <div class="period">2024 - 2027 | [cite_start]Toulouse, France [cite: 95, 96]</div>
-            </div>
-            <div class="education-card">
-                <h3>Université Paris Dauphine - PSL</h3>
-                <div class="degree">Bachelor's Degree in Applied Economics</div>
-                <div class="period">2025 - 2026 | [cite_start]Remote / Paris [cite: 97, 98]</div>
-            </div>
-            <div class="education-card">
-                <h3>University of Bordeaux</h3>
-                <div class="degree">Bachelor of Science - Aerospace Engineering</div>
-                <div class="period">2021 - 2024 | [cite_start]Bordeaux, France [cite: 100, 101]</div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Contact</h2>
-        <div class="contact-content">
-            <p>Open to exchanges and collaborations! [cite_start]Don't hesitate to contact me to discuss projects or share ideas[cite: 21].</p>
-            <div class="contact-links">
-                [cite_start]<a href="mailto:adauphole@gmail.com" class="contact-btn">Send Email</a> [cite: 2]
-                [cite_start]<a href="https://www.linkedin.com/in/arthur-dauphole-fouillet" target="_blank" class="contact-btn">LinkedIn</a> [cite: 3]
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <p style="margin-bottom: 2rem; color: #666;">
+                I enjoy taking on technical challenges. Don't hesitate to contact me!
+            </p>
+            <div>
+                <a href="mailto:adauphole@gmail.com" class="btn">Email Me</a>
+                <a href="https://www.linkedin.com/in/arthur-dauphole-fouillet" target="_blank" class="btn" style="background: #0077b5;">LinkedIn</a>
             </div>
         </div>
     </section>
@@ -304,27 +336,5 @@
         <p>&copy; 2025 Arthur Dauphole-Fouillet. All rights reserved.</p>
     </footer>
 
-    <script>
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        // Parallax effect
-        window.addEventListener('scroll', () => {
-            const hero = document.querySelector('.hero div');
-            const scrolled = window.pageYOffset;
-            if(hero) {
-                hero.style.transform = `translateY(${scrolled * 0.4}px)`;
-                hero.style.opacity = 1 - (scrolled / 700);
-            }
-        });
-    </script>
 </body>
 </html>

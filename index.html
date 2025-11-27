@@ -3,6 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio d'Arthur Dauphole-Fouillet, Élève Ingénieur à l'ISAE-SUPAERO et Thales. Spécialisé en Génie Industriel, Radar et Systèmes Embarqués.">
+    <meta name="author" content="Arthur Dauphole-Fouillet">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Arthur Dauphole-Fouillet - Ingénieur Radar & Spatial">
+    <meta property="og:description" content="Découvrez mes projets en aérospatial, systèmes embarqués et mon parcours à l'ISAE-SUPAERO et Dauphine.">
+    <meta property="og:image" content="profile.jpg">
+
     <title>Arthur Dauphole-Fouillet - Portfolio</title>
     <style>
         * {
@@ -35,6 +43,7 @@
             display: flex;
             justify-content: center;
             gap: 3rem;
+            flex-wrap: wrap; /* Sécurité pour mobile */
         }
 
         nav a {
@@ -56,7 +65,7 @@
             justify-content: center;
             text-align: center;
             padding: 2rem;
-            margin-top: 80px;
+            margin-top: 60px; /* Compensation header */
         }
 
         .hero h1 {
@@ -90,20 +99,27 @@
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 4rem;
             align-items: center;
         }
 
-        .profile-image {
-            width: 100%;
-            height: 400px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 8px;
+        .profile-container {
             display: flex;
-            align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 1.2rem;
+            align-items: center;
+        }
+
+        .profile-img {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            border-radius: 20px; /* Bords arrondis modernes */
+            box-shadow: 0 10px 30px rgba(0, 102, 204, 0.2); /* Ombre bleutée subtile */
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.02);
         }
 
         .about-text p {
@@ -111,6 +127,7 @@
             font-size: 1.1rem;
             line-height: 1.8;
             color: #555;
+            text-align: justify;
         }
 
         /* Expériences */
@@ -339,6 +356,10 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            .hero {
+                margin-top: 100px;
+            }
+
             .hero h1 {
                 font-size: 2.5rem;
             }
@@ -347,12 +368,18 @@
                 font-size: 1.2rem;
             }
 
+            /* Stack la photo et le texte sur mobile */
             .about-content {
                 grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .profile-img {
+                max-width: 250px; /* Plus petit sur mobile */
             }
 
             nav ul {
-                gap: 1.5rem;
+                gap: 1rem;
                 font-size: 0.9rem;
             }
 
@@ -367,7 +394,6 @@
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav>
         <ul>
             <li><a href="#accueil">Accueil</a></li>
@@ -380,7 +406,6 @@
         </ul>
     </nav>
 
-    <!-- Hero Section -->
     <section id="accueil" class="hero">
         <div>
             <h1>Arthur Dauphole-Fouillet</h1>
@@ -388,23 +413,21 @@
         </div>
     </section>
 
-    <!-- À propos -->
     <section id="apropos">
         <h2>À propos</h2>
         <div class="about-content">
-            <div class="profile-image">
-                Votre Photo
+            <div class="profile-container">
+                <img src="profile.jpg" alt="Arthur Dauphole-Fouillet - Ingénieur ISAE-SUPAERO" class="profile-img">
             </div>
             <div class="about-text">
-                <p>Actuellement en formation d'ingénieur en Génie Industriel pour l'Aéronautique et le Spatial à l'ISAE-SUPAERO, je réalise mon alternance chez Thales en tant qu'Ingénieur Validation et Test Radar.</p>
-                <p>Mon parcours m'a permis de développer des compétences en ingénierie système, technologies radar et conception de solutions embarquées, avec une approche rigoureuse et analytique.</p>
-                <p>J'ai également travaillé sur des projets innovants, notamment au Laboratoire d'astrophysique de Bordeaux, où j'ai conçu un système de largage par drone dans le cadre du projet SaharaSAR.</p>
-                <p>Curieux et motivé, j'aime relever les défis techniques et contribuer aux avancées dans les secteurs de l'aéronautique et de la défense.</p>
+                <p>Actuellement en formation d'ingénieur en Génie Industriel pour l'Aéronautique et le Spatial à l'ISAE-SUPAERO et en Licence d'Économie à Dauphine, je réalise mon alternance chez Thales en tant qu'Ingénieur Validation et Test Radar.</p>
+                <p>Mon parcours m'a permis de développer des compétences hybrides en ingénierie système, technologies radar et conception de solutions embarquées, soutenues par une approche rigoureuse et analytique.</p>
+                <p>J'ai notamment travaillé sur le projet SaharaSAR au Laboratoire d'astrophysique de Bordeaux (système de largage par drone) et sur la mission lunaire ROSELIA.</p>
+                <p>Curieux et motivé, je suis passionné par les défis techniques qui allient innovation aérospatiale et contraintes industrielles.</p>
             </div>
         </div>
     </section>
 
-    <!-- Expérience -->
     <section id="experience">
         <h2>Expérience</h2>
         <div class="timeline">
@@ -418,7 +441,7 @@
                     <li>Implémentation et automatisation de fiches de tests en Python</li>
                     <li>Développement d'un outil de simulation de modèle SAR</li>
                     <li>Intégration et validation de modes Radar</li>
-                    <li>Optimisation des outils via Jenkins, JIRA et Git pour l'intégration continue</li>
+                    <li>Optimisation des outils via Jenkins, JIRA et Git (CI/CD)</li>
                 </ul>
             </div>
 
@@ -426,20 +449,23 @@
                 <div class="company">SupaeroMoon</div>
                 <h3>Analyste de Mission</h3>
                 <div class="period">Septembre 2024 - Janvier 2025 | Toulouse</div>
-                <p>Co-rédaction de la proposition de mission ROSELIA, un rover lunaire soumis au CSUT (Centre Spatial Universitaire de Toulouse), axée sur l'organisation de la mission et la définition des objectifs scientifiques.</p>
-                <p>ROSELIA vise à évaluer la présence de glace d'eau dans la surface peu profonde du régolithe lunaire en effectuant des mesures sismiques actives à l'aide de géophones.</p>
+                <p>Co-rédaction de la proposition de mission ROSELIA, un rover lunaire soumis au CSUT (Centre Spatial Universitaire de Toulouse).</p>
+                <ul>
+                    <li>Définition des objectifs scientifiques (détection de glace d'eau par sismique active)</li>
+                    <li>Organisation de la mission et analyse des contraintes environnementales</li>
+                </ul>
             </div>
 
             <div class="timeline-item">
                 <div class="company">Thales</div>
                 <h3>Stagiaire Ingénieur Conception Électrique</h3>
                 <div class="period">Janvier 2024 - Mars 2024 | Mérignac</div>
-                <p>Conception et réalisation d'une sonde de champ électrique miniature dans le contexte de la compatibilité électromagnétique pour l'aviation civile et militaire.</p>
+                <p>Conception et réalisation d'une sonde de champ électrique miniature pour la compatibilité électromagnétique (CEM).</p>
                 <ul>
-                    <li>Étude des défis CEM spécifiques aux environnements aviation</li>
-                    <li>Conception avec KiCad pour schématique et routage</li>
-                    <li>Tests en chambre semi-anéchoïque et chambre réverbérante</li>
-                    <li>Modélisation CAO et impression 3D avec Fusion 360</li>
+                    <li>Étude des défis CEM en environnements aéronautiques</li>
+                    <li>Conception schématique et routage sous KiCad</li>
+                    <li>Tests en chambre semi-anéchoïque et réverbérante</li>
+                    <li>Modélisation CAO et impression 3D (Fusion 360)</li>
                 </ul>
             </div>
 
@@ -447,24 +473,22 @@
                 <div class="company">Laboratoire d'astrophysique de Bordeaux</div>
                 <h3>Stagiaire Ingénieur Systèmes Embarqués</h3>
                 <div class="period">Mai 2023 - Juin 2023 | Pessac</div>
-                <p>Conception, prototypage et test d'un mécanisme de largage de charges pour mesures géophysiques par UAV (DJI Phantom 4) dans le cadre du projet SaharaSAR.</p>
+                <p>Conception, prototypage et test d'un mécanisme de largage de charges pour mesures géophysiques par drone (Projet SaharaSAR).</p>
                 <ul>
-                    <li>Développement d'un mécanisme de largage fiable et sécurisé</li>
-                    <li>Prototypage CAO avec Fusion 360 et fabrication par impression 3D</li>
-                    <li>Intégration avec les circuits électroniques du drone</li>
-                    <li>Programmation embarquée sur Arduino Nano avec commande par optocoupleurs</li>
+                    <li>Développement d'un mécanisme de largage sécurisé</li>
+                    <li>Prototypage CAO (Fusion 360) et impression 3D</li>
+                    <li>Programmation embarquée sur Arduino Nano</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- Projets -->
     <section id="projets">
         <h2>Projets Clés</h2>
         <div class="projects-grid">
             <div class="project-card">
                 <h3>ROSELIA - Mission Lunaire</h3>
-                <p>Co-conception d'une mission de rover lunaire visant à détecter la présence de glace d'eau dans le régolithe lunaire par mesures sismiques actives. Soumis au Centre Spatial Universitaire de Toulouse.</p>
+                <p>Co-conception d'une mission de rover lunaire visant à détecter la présence de glace d'eau dans le régolithe lunaire par mesures sismiques actives. Projet étudiant majeur.</p>
                 <div class="project-tags">
                     <span class="tag">Mission Analysis</span>
                     <span class="tag">Spatial</span>
@@ -473,7 +497,7 @@
             </div>
             <div class="project-card">
                 <h3>Sonde CEM Miniature</h3>
-                <p>Conception complète d'une sonde de champ électrique miniature pour la compatibilité électromagnétique en aviation. Du schéma électronique aux tests en environnement contrôlé.</p>
+                <p>Conception complète d'une sonde de champ électrique pour la compatibilité électromagnétique en aviation. Du schéma électronique aux tests en environnement contrôlé.</p>
                 <div class="project-tags">
                     <span class="tag">KiCad</span>
                     <span class="tag">CEM</span>
@@ -482,7 +506,7 @@
             </div>
             <div class="project-card">
                 <h3>SaharaSAR - Système de Largage</h3>
-                <p>Développement d'un système de largage embarqué sur drone pour l'imagerie de structures géologiques et la cartographie des ressources en eau fossile dans les régions désertiques d'Afrique du Nord.</p>
+                <p>Développement d'un système de largage embarqué sur drone pour l'imagerie de structures géologiques et la cartographie des ressources en eau fossile.</p>
                 <div class="project-tags">
                     <span class="tag">Arduino</span>
                     <span class="tag">CAO 3D</span>
@@ -492,17 +516,16 @@
         </div>
     </section>
 
-    <!-- Compétences -->
     <section id="competences">
         <h2>Compétences</h2>
         <div class="skills-grid">
             <div class="skill-category">
                 <h3>Programmation</h3>
                 <ul class="skill-list">
-                    <li>Python</li>
+                    <li>Python (Analytique & Test)</li>
                     <li>MATLAB</li>
                     <li>Arduino (C/C++)</li>
-                    <li>Pandas</li>
+                    <li>Pandas / NumPy</li>
                 </ul>
             </div>
             <div class="skill-category">
@@ -518,9 +541,8 @@
                 <h3>Outils Projet</h3>
                 <ul class="skill-list">
                     <li>JIRA</li>
-                    <li>DOORS</li>
-                    <li>Agile / Scrum</li>
-                    <li>Gestion d'exigences</li>
+                    <li>DOORS (Exigences)</li>
+                    <li>Méthode Agile / Scrum</li>
                 </ul>
             </div>
             <div class="skill-category">
@@ -529,7 +551,7 @@
                     <li>Fusion 360</li>
                     <li>KiCad</li>
                     <li>Impression 3D</li>
-                    <li>Prototypage</li>
+                    <li>Instrumentation de test</li>
                 </ul>
             </div>
             <div class="skill-category">
@@ -537,7 +559,7 @@
                 <ul class="skill-list">
                     <li>Technologies Radar</li>
                     <li>Systèmes embarqués</li>
-                    <li>Compatibilité EM</li>
+                    <li>Compatibilité EM (CEM)</li>
                     <li>Validation & Tests</li>
                 </ul>
             </div>
@@ -545,49 +567,45 @@
                 <h3>Langues</h3>
                 <ul class="skill-list">
                     <li>Français (Natif)</li>
-                    <li>Anglais (Professionnel)</li>
-                    <li>Espagnol (Intermédiaire)</li>
-                    <li>Italien (Notions)</li>
+                    <li>Anglais (C1 - Professionnel)</li>
+                    <li>Espagnol (B2 - Intermédiaire)</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- Formation -->
     <section id="formation">
         <h2>Formation</h2>
         <div class="education-grid">
             <div class="education-card">
                 <h3>ISAE-SUPAERO</h3>
-                <div class="degree">Master - Ingénieur Aéronautique et Spatial</div>
-                <div class="period">2024 - 2027</div>
+                <div class="degree">Diplôme d'Ingénieur - Génie Industriel Aérospatial</div>
+                <div class="period">2024 - 2027 | Toulouse</div>
             </div>
             <div class="education-card">
                 <h3>Université Paris Dauphine - PSL</h3>
                 <div class="degree">Licence d'Économie Appliquée - Filière Grande École</div>
-                <div class="period">2025 - 2026</div>
+                <div class="period">2025 - 2026 | À distance</div>
             </div>
             <div class="education-card">
                 <h3>Université de Bordeaux</h3>
-                <div class="degree">Licence - Génie Aérospatial</div>
-                <div class="period">2021 - 2024</div>
+                <div class="degree">Licence Sciences de l'Ingénieur - Génie Aérospatial</div>
+                <div class="period">2021 - 2024 | Bordeaux</div>
             </div>
         </div>
     </section>
 
-    <!-- Contact -->
     <section id="contact">
         <h2>Contact</h2>
         <div class="contact-content">
-            <p>Intéressé par une collaboration ou un échange ? N'hésitez pas à me contacter !</p>
+            <p>Intéressé par une collaboration ou un échange technique ? N'hésitez pas à me contacter.</p>
             <div class="contact-links">
-                <a href="mailto:adauphole@gmail.com" class="contact-btn">Email</a>
+                <a href="mailto:adauphole@gmail.com" class="contact-btn">M'envoyer un Email</a>
                 <a href="https://www.linkedin.com/in/arthur-dauphole-fouillet" target="_blank" class="contact-btn">LinkedIn</a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Arthur Dauphole-Fouillet. Tous droits réservés.</p>
     </footer>
@@ -609,9 +627,10 @@
 
         // Effet de parallaxe léger sur le hero
         window.addEventListener('scroll', () => {
-            const hero = document.querySelector('.hero');
+            const hero = document.querySelector('.hero div');
             const scrolled = window.pageYOffset;
-            hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+            hero.style.transform = `translateY(${scrolled * 0.4}px)`;
+            hero.style.opacity = 1 - (scrolled / 700);
         });
     </script>
 </body>

@@ -1,24 +1,24 @@
 # Portfolio - Arthur Dauphole-Fouillet 🚀
 
-Bienvenue sur le dépôt de mon portfolio personnel. Ce site web présente mon parcours d'élève ingénieur à l'**ISAE-SUPAERO**, ma formation en économie à **Paris-Dauphine**, ainsi que mes expériences professionnelles chez **Thales**.
+Welcome to my personal portfolio repository. This website showcases my background as an engineering student at **ISAE-SUPAERO**, my economics studies at **Paris-Dauphine**, and my professional experience at **Thales**.
 
-🔗 **Voir le site en ligne :** [Lien vers ton GitHub Pages ici]
+🔗 **Live Website:** [Insert your GitHub Pages link here]
 
-## 📋 À propos
-Ce portfolio a pour but de centraliser mes compétences techniques et mes projets en :
-* **Ingénierie Radar & Systèmes Embarqués** (Validation, Test, Conception)
-* **Aérospatial & Spatial** (Missions Lunaires, Drones)
-* **Développement** (Python, Outils CI/CD)
+## 📋 About
+This portfolio aims to centralize my technical skills and projects in:
+* **Radar Engineering & Embedded Systems** (Validation, Test, Design)
+* **Aerospace & Space** (Lunar Missions, UAVs)
+* **Development** (Python, CI/CD Tools)
 
-## 🛠️ Stack Technique
-Ce projet est conçu pour être léger, rapide et performant, sans dépendances lourdes.
-* **HTML5** : Structure sémantique et accessible.
-* **CSS3** : Design responsive (Mobile First), Flexbox & Grid, variables modernes.
-* **JavaScript (Vanilla)** : Gestion du smooth scroll et effets de parallaxe légers.
+## 🛠️ Tech Stack
+This project is designed to be lightweight, fast, and performant, with no heavy dependencies.
+* **HTML5**: Semantic and accessible structure.
+* **CSS3**: Responsive design (Mobile First), Flexbox & Grid, modern variables.
+* **JavaScript (Vanilla)**: Smooth scrolling and lightweight parallax effects.
 
-## 📂 Structure du projet
+## 📂 Project Structure
 ```text
 .
-├── index.html      # Code source principal
-├── profile.jpg     # Photo de profil (Assets)
+├── index.html      # Main source code
+├── profile.jpg     # Profile picture (Assets)
 └── README.md       # Documentation

@@ -13,6 +13,8 @@
 
     <title>Arthur Dauphole-Fouillet | Portfolio</title>
     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -25,7 +27,7 @@
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact" class="btn-nav">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -37,10 +39,17 @@
             <div class="hero-text">
                 <h1>Arthur Dauphole-Fouillet</h1>
                 <p class="subtitle">ISAE-SUPAERO | Paris Dauphine - PSL | Radar Validation and Test Engineer @Thales</p>
-                <p class="location">📍 Pessac, Nouvelle-Aquitaine, France</p>
+                <p class="location"><i class="fas fa-map-marker-alt"></i> Pessac, Nouvelle-Aquitaine, France</p>
 
                 <div class="hero-summary">
-                    <p>I'm currently studying <strong>Industrial Engineering for Aeronautics and Space</strong> at ISAE-SUPAERO and doing my work-study at Thales as a Radar Validation and Test Engineer. My experience has enabled me to develop skills in systems engineering, radar technologies, and the design of embedded solutions, with a rigorous and analytical approach. Open to exchanges and collaborations!</p>
+                    <p>I'm currently studying <strong>Industrial Engineering for Aeronautics and Space</strong> at ISAE-SUPAERO and doing my work-study at Thales as a Radar Validation and Test Engineer. My experience has enabled me to develop skills in systems engineering, radar technologies, and the design of embedded solutions, with a rigorous and analytical approach.</p>
+                </div>
+
+                <div class="hero-actions">
+                    <a href="CV_Arthur_Dauphole.pdf" target="_blank" class="btn btn-primary btn-lg">
+                        <i class="fas fa-file-download"></i> Download Resume
+                    </a>
+                    <a href="#contact" class="btn btn-outline btn-lg">Contact Me</a>
                 </div>
             </div>
         </div>
@@ -48,83 +57,72 @@
 
     <section id="experience">
         <div class="container">
-            <h2>Experience</h2>
+            <h2 class="reveal">Experience</h2>
             <div class="timeline">
                 
-                <div class="job-card">
+                <div class="job-card reveal">
                     <div class="job-header">
                         <h3>Apprentice Radar Validation and Test Engineer</h3>
                         <div class="job-company">Thales</div>
                         <span class="job-date">September 2024 - Present | Mérignac, France</span>
                     </div>
                     <div class="job-desc">
-                        <p>Working within the Innovative Defence Engineering (IDE) Competence Centre, I contribute to Radar development and validation.</p>
+                        <p>Working within the Innovative Defence Engineering (IDE) Competence Centre.</p>
                         <ul>
                             <li>Development and test execution of Radar operational functions.</li>
                             <li>Implementation and automation of test sheets in <strong>Python</strong>.</li>
                             <li>Development of a SAR Model simulation tool.</li>
-                            <li>Integration and validation of Radar Modes.</li>
-                            <li>Tools optimization using <strong>Jenkins, JIRA, and Git</strong> for continuous integration.</li>
+                            <li>Tools optimization using <strong>Jenkins, JIRA, and Git</strong> (CI/CD).</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="job-card">
+                <div class="job-card reveal">
                     <div class="job-header">
                         <h3>Mission Analyst</h3>
                         <div class="job-company">SupaeroMoon</div>
                         <span class="job-date">September 2024 - January 2025 | Toulouse, France</span>
                     </div>
                     <div class="job-desc">
-                        <p>Co-authored the mission proposal for <strong>ROSELIA</strong>, a lunar rover mission submitted to the CSUT (Centre Spatial Universitaire de Toulouse).</p>
+                        <p>Co-authored the mission proposal for <strong>ROSELIA</strong>, a lunar rover mission submitted to the CSUT.</p>
                         <ul>
-                            <li>Definition of scientific objectives: assessing the presence of water ice in the lunar regolith via active seismic measurements.</li>
-                            <li>Focus on mission organization and environmental constraints.</li>
+                            <li>Definition of scientific objectives: assessing the presence of water ice via active seismic measurements.</li>
+                            <li>Analysis of environmental constraints and mission organization.</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="job-card">
+                <div class="job-card reveal">
                     <div class="job-header">
                         <h3>Electrical Design Engineer Intern</h3>
                         <div class="job-company">Thales</div>
                         <span class="job-date">January 2024 - March 2024 | Mérignac, France</span>
                     </div>
                     <div class="job-desc">
-                        <p>Design and production of a miniature electric field probe for electromagnetic compatibility (EMC) in aviation.</p>
+                        <p>Design and production of a miniature electric field probe for EMC in aviation.</p>
                         <ul>
-                            <li>Study of EMC challenges in civil and military aviation.</li>
-                            <li>Design and construction using <strong>KiCad</strong> for schematic/routing.</li>
-                            <li>Testing in semi-anechoic and mode-shuffling reverberation chambers.</li>
-                            <li>CAD modelling (Fusion 360) and 3D printing of parts.</li>
+                            <li>Design and construction using <strong>KiCad</strong>.</li>
+                            <li>Testing in semi-anechoic and reverberation chambers.</li>
+                            <li>CAD modelling (Fusion 360) and 3D printing.</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="job-card">
+                <div class="job-card reveal">
                     <div class="job-header">
                         <h3>Embedded Systems Engineer Intern</h3>
                         <div class="job-company">Laboratoire d'astrophysique de Bordeaux</div>
                         <span class="job-date">May 2023 - June 2023 | Pessac, France</span>
                     </div>
                     <div class="job-desc">
-                        <p>SaharaSAR Project: Contributing to the mapping of fossil water resources in desert regions.</p>
+                        <p><strong>SaharaSAR Project:</strong> Mapping fossil water resources in desert regions.</p>
                         <ul>
-                            <li>Designed and prototyped a charge release mechanism for UAV-based (DJI Phantom 4) geophysical measurements.</li>
-                            <li>On-board programming on <strong>Arduino Nano</strong> to control the release mechanism via optocouplers.</li>
-                            <li>Real-life testing to assess system reliability.</li>
+                            <li>Designed a charge release mechanism for UAV (DJI Phantom 4).</li>
+                            <li>On-board programming on <strong>Arduino Nano</strong>.</li>
                         </ul>
-                    </div>
-                </div>
-
-                <div class="job-card">
-                    <div class="job-header">
-                        <h3>Private Teacher</h3>
-                        <div class="job-company">Independent</div>
-                        <span class="job-date">October 2022 - May 2024 | Bordeaux, France</span>
-                    </div>
-                    <div class="job-desc">
-                        <p>Taught mathematics and economics to university students using personalized methods.</p>
+                        <div style="margin-top: 10px;">
+                            <a href="#" class="github-link"><i class="fab fa-github"></i> View Project Code (Example)</a>
+                        </div>
                     </div>
                 </div>
 
@@ -132,24 +130,24 @@
         </div>
     </section>
 
-    <section id="education">
+    <section id="education" style="background-color: #f3f4f6;">
         <div class="container">
-            <h2>Education</h2>
+            <h2 class="reveal">Education</h2>
             <div class="edu-grid">
-                <div class="edu-card">
+                <div class="edu-card reveal">
                     <div class="edu-school">ISAE-SUPAERO</div>
                     <div class="edu-degree">Master's degree, Aeronautics and Space Engineering</div>
-                    <div class="edu-year">2024 - 2027</div>
+                    <div class="edu-year"><i class="far fa-calendar-alt"></i> 2024 - 2027</div>
                 </div>
-                <div class="edu-card">
+                <div class="edu-card reveal">
                     <div class="edu-school">Université Paris Dauphine - PSL</div>
-                    <div class="edu-degree">Bachelor's Degree in Applied Economics (Grande École)</div>
-                    <div class="edu-year">2025 - 2026</div>
+                    <div class="edu-degree">Bachelor's Degree in Applied Economics</div>
+                    <div class="edu-year"><i class="far fa-calendar-alt"></i> 2025 - 2026</div>
                 </div>
-                <div class="edu-card">
+                <div class="edu-card reveal">
                     <div class="edu-school">University of Bordeaux</div>
-                    <div class="edu-degree">Bachelor of Science - BS, Aerospace Engineering</div>
-                    <div class="edu-year">2021 - 2024</div>
+                    <div class="edu-degree">Bachelor of Science - Aerospace Engineering</div>
+                    <div class="edu-year"><i class="far fa-calendar-alt"></i> 2021 - 2024</div>
                 </div>
             </div>
         </div>
@@ -157,11 +155,11 @@
 
     <section id="skills">
         <div class="container">
-            <h2>Skills & Certifications</h2>
+            <h2 class="reveal">Skills & Certifications</h2>
             <div class="skills-wrapper">
                 
-                <div class="skill-group">
-                    <h3>Technical Skills</h3>
+                <div class="skill-group reveal">
+                    <h3><i class="fas fa-code"></i> Technical Skills</h3>
                     <div class="tag-container">
                         <span class="tag">Python & Pandas</span>
                         <span class="tag">MATLAB</span>
@@ -169,42 +167,43 @@
                         <span class="tag">Git / Jenkins</span>
                         <span class="tag">JIRA / Bitbucket</span>
                         <span class="tag">DOORS</span>
-                        <span class="tag">Agile / Scrum</span>
-                        <span class="tag">KiCad</span>
-                        <span class="tag">Fusion 360</span>
+                        <span class="tag">KiCad / Fusion 360</span>
                         <span class="tag">Arduino</span>
                     </div>
                     
-                    <h3 style="margin-top: 2rem;">Languages</h3>
+                    <h3 style="margin-top: 2rem;"><i class="fas fa-globe"></i> Languages</h3>
                     <ul class="cert-list">
-                        [cite_start]<li><strong>French:</strong> Native or Bilingual [cite: 8]</li>
-                        [cite_start]<li><strong>English:</strong> Professional Working [cite: 6]</li>
-                        [cite_start]<li><strong>Spanish:</strong> Limited Working [cite: 7]</li>
-                        [cite_start]<li><strong>Italian:</strong> Elementary [cite: 8]</li>
+                        <li><strong>French:</strong> Native</li>
+                        <li><strong>English:</strong> Professional Working (C1)</li>
+                        <li><strong>Spanish:</strong> Limited Working</li>
                     </ul>
                 </div>
 
-                <div class="skill-group">
-                    <h3>Certifications</h3>
+                <div class="skill-group reveal">
+                    <h3><i class="fas fa-certificate"></i> Certifications</h3>
                     <ul class="cert-list">
-                        [cite_start]<li>Python and Pandas for Data Engineering [cite: 10]</li>
-                        [cite_start]<li>Diplôme des ambassadeurs du spatial [cite: 11]</li>
-                        [cite_start]<li>Brevet de Télépilote catégorie ouverte A1 et A3 (Drone Pilot) [cite: 12]</li>
+                        <li>Python and Pandas for Data Engineering</li>
+                        <li>Diplôme des ambassadeurs du spatial</li>
+                        <li>Drone Pilot License (Category A1/A3)</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact-section">
+    <section id="contact" class="contact-section reveal">
         <div class="container">
             <h2>Get in Touch</h2>
             <p style="margin-bottom: 2rem; color: #666;">
-                I enjoy taking on technical challenges. Don't hesitate to contact me!
+                Ready to solve complex engineering challenges? Let's connect!
             </p>
-            <div>
-                <a href="mailto:adauphole@gmail.com" class="btn">Email Me</a>
-                <a href="https://www.linkedin.com/in/arthur-dauphole-fouillet" target="_blank" class="btn" style="background: #0077b5;">LinkedIn</a>
+            <div class="contact-buttons">
+                <a href="mailto:adauphole@gmail.com" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i> Email Me
+                </a>
+                <a href="https://www.linkedin.com/in/arthur-dauphole-fouillet" target="_blank" class="btn btn-linkedin">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
             </div>
         </div>
     </section>

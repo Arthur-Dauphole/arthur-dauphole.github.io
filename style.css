@@ -172,3 +172,37 @@ footer {
     .skills-wrapper { grid-template-columns: 1fr; gap: 3rem; }
     .nav-container { justify-content: center; }
 }
+
+/* --- PAGE MUSIQUE --- */
+.music-grid {
+    display: grid;
+    /* Crée une grille auto-adaptative : min 300px de large par playlist */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+.playlist-card {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.playlist-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.playlist-card h3 {
+    margin-bottom: 1rem;
+    color: var(--primary);
+    font-size: 1.2rem;
+}
+
+/* Ajustement spécifique pour les iframes Spotify */
+.playlist-card iframe {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
